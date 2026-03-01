@@ -22,3 +22,20 @@ function setBalance(value){
     const balanceElement = document.getElementById("balance");
     balanceElement.innerText = value;
 }
+
+// machine id > hide all > show id
+function showOnly(id){
+    // console.log('show only clicked');
+    
+    const addmoney = document.getElementById('add-money');
+    const cashout = document.getElementById('cashout');
+    // console.log('Add Money - ${addmoney}, Cashout- ${cashout}');
+
+    // hide all
+    addmoney.classList.add("hidden");
+    cashout.classList.add("hidden");
+
+    // show those elements with id
+    const selected = document.getElementById(id);
+    selected.classList.remove("hidden");
+}

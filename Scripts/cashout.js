@@ -10,13 +10,15 @@
         // 2- get the amount, validate, convert to number
         const cashoutAmount = getValueFromInput('cashout-amount');
 
-        // 3- get current balance, validate, convert to number
-        const balanceElement = document.getElementById('balance');
-        const balance = balanceElement.innerText;
-        console.log('Available Balance',balance);
+        // // 3- get current balance, validate, convert to number
+        // const balanceElement = document.getElementById('balance');
+        // const balance = balanceElement.innerText;
+        // console.log('Available Balance',balance);
+
+        const currentBalance = getBalance();
 
         // 4- calculate new Balance
-        const newBalance = Number(balance) - Number(cashoutAmount);
+        const newBalance = currentBalance - Number(cashoutAmount);
         console.log(newBalance);
            if(newBalance < 0){
             alert('Invalid Amount');
@@ -28,7 +30,7 @@
         if(pin === '6575'){
             // 5-1 true::> show an alert > set new Balance
             alert('Cashout Successful');
-            balanceElement.innerText = newBalance;
+            setBalance(newBalance);
         }
         else{
             // 5-2 flase::> show an error alert > return
